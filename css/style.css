@@ -1,0 +1,499 @@
+/* RESET des marges et padding pour éviter les conflits */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Définition de la police de base et des couleurs globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style du header */
+header {
+    background-color: white;
+    padding: 20px;
+    color: #180808;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: rgb(58, 166, 209);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #e74c3c;
+}
+
+/* Section Hero */
+.hero {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url('./assets/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Section À propos de nous */
+.about {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about ul {
+    margin-bottom: 30px;
+}
+
+.about ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Mise en page flexible pour la section "Notre Bureau" et "Notre Équipe" */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-item h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-item p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.about-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+/* Section Call to Action (CTA) */
+.cta {
+    background-color: #3c8ce7;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.cta h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Professionnalisation du bouton "Réserver un vol" */
+.cta .btn,
+.cta .btn-reserver-vol {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    grid-column: span 1; /* Utilisation des grilles pour contrôler la taille */
+}
+
+/* Effet au survol */
+.cta .btn-reserver-vol:hover,
+.cta .btn:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+/* Effet de focus (quand le bouton est activé ou sélectionné) */
+.cta .btn-reserver-vol:focus,
+.cta .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #3498db;
+}
+
+/* Bouton désactivé (si applicable) */
+.cta .btn-reserver-vol:disabled,
+.cta .btn:disabled {
+    background-color: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+/* Section footer */
+footer {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 20px; /* Marge au-dessus du pied de page pour qu'il ne colle pas à la section de contact */
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #e74c3c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Styles généraux des sections */
+section {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les listes */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Styles des images */
+.service-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.service-images img {
+    width: 48%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles spécifiques pour la section Naturalisation */
+.services-naturalisation {
+    background-color: #eaf2f8;
+    border-left: 5px solid #3498db;
+}
+
+/* Styles spécifiques pour la section Passeport */
+.services-passeport {
+    background-color: #f5f5f5;
+    border-left: 5px solid #2ecc71;
+}
+
+/* Design responsive */
+@media (max-width: 768px) {
+    .service-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-images img {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Ajustement pour la section des destinations */
+.destination img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.cta .btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 480px) {
+    .cta .btn {
+        padding: 10px 20px;
+    }
+}
+
+/* Section Hero ajustée */
+.hero {
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
+
+/* Disposition des destinations */
+/* Section Destinations */
+.destinations {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.destinations h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+.destination-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.destination-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.destination-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.destination-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.destination-info p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.destination-info .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.destination-info .btn:hover {
+    background-color: #e74c3c;
+}
+
+
+@media (max-width: 768px) {
+    .destination-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer ajusté pour les petits écrans */
+footer {
+    padding: 10px;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    footer a {
+        font-size: 1rem;
+    }
+}
+
+/* FORMULAIRE DE CONTACT */
+.contact-form label {
+    font-size: 1.1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    font-size: 1rem;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+/* Section de contact */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 0; /* Eviter que la marge ne soit trop grande à la fin de la section */
+}
+
+/* Mise en page flexible avec grid pour la section de contact */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* Alignement horizontal des boutons de contact */
+.contact-buttons {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    gap: 15px; /* Espace entre les boutons */
+    flex-wrap: wrap; /* Permet aux boutons de s'adapter en plusieurs lignes si nécessaire sur les petits écrans */
+}
+
+/* Pour les petits écrans (mobile, tablette) */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .contact-form {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .contact-btn {
+        width: auto;  /* Les boutons de contact ne prennent pas toute la largeur */
+        margin-bottom: 15px;
+    }
+
+    /* Ajustement des boutons sur les petits écrans */
+    .contact-buttons {
+        justify-content: space-between; /* Les boutons sont répartis de manière égale */
+    }
+}
+
+/* Enlever le soulignement des liens contenant des images */
+a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+}
+
+/* Assurer que les boutons de contact n'ont pas de soulignement */
+.contact-btn {
+    text-decoration: none; /* Supprimer le soulignement des boutons de contact */
+}
+
+/* S'assurer qu'il n'y a pas de soulignement même sur les liens avec des images */
+.contact-btn img {
+    border: none; /* Retirer tout bord autour de l'image */
+    display: block; /* Pour éviter l'espace sous l'image (lié à la ligne de base) */
+}
+
+/* Optionnel : Pour ajouter un effet au survol des boutons de contact */
+.contact-btn:hover {
+    opacity: 0.7; /* Effet de survol pour rendre les boutons plus interactifs */
+}
