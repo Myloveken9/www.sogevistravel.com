@@ -2,13 +2,20 @@
 // Vérifier si les données du formulaire ont été envoyées via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Nettoyer les valeurs du formulaire pour éviter les attaques XSS
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
+    // Nettoyer les valeurs du formulaire pour éviter les attaques XSS et enlever les espaces superflus
+    $name = trim(htmlspecialchars($_POST['name']));
+    $email = trim(htmlspecialchars($_POST['email']));
+    $subject = trim(htmlspecialchars($_POST['subject']));
+    $message = trim(htmlspecialchars($_POST['message']));
+
+    // Vérifier si les champs obligatoires sont remplis
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        echo "Tous les champs doivent être remplis.";
+        exit;
+    }
 
     // Validation de l'email
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "L'adresse email fournie est invalide. Veuillez vérifier.";
         exit;
@@ -30,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers = "From: " . $email . "\r\n";
     $headers .= "Reply-To: " . $email . "\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-    
+    $headers .= "X-Mailer: PHP/" . phpversion();
+
     // Envoi de l'email
     if (mail($to, $email_subject, $email_message, $headers)) {
         // Si l'email est envoyé avec succès, afficher un message de succès
